@@ -93,3 +93,16 @@ This is a responsive web application built using the Django framework. It helps 
 ---
 
 ### 🎉 Congratulations! You have successfully set up the Django Job Application Tracker.
+
+
+![Login](/images/a.png)
+
+![Overview](/images/b.png)
+
+![Applications](/images/c.png)
+
+![Application](/images/d.png)
+
+![Detailpage](/images/e.png)
+
+![UpdateStatus](/images/f.png)
