@@ -1,0 +1,28 @@
+<div>
+    <canvas id="my_bar_location"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const my_bar_location = document.getElementById('my_bar_location');
+  
+    new Chart(my_bar_location, {
+      type: 'bar',
+      data: {
+        labels: [{% for i in bar_state %}"{{ i }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+        datasets: [{
+          label: 'Location by State',
+          data: [{% for i in bar_value %}"{{ i }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>

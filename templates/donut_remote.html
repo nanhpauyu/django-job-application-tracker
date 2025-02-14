@@ -1,0 +1,29 @@
+<div>
+    <canvas id="my_donut_remote"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    const my_donut_remote = document.getElementById('my_donut_remote');
+  
+    new Chart(my_donut_remote, {
+      type: 'pie',
+      data: {
+        labels: [{% for i in donut_label_remote %}"{{ i }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+        datasets: [{
+          label: 'Remote/Onsite',
+          data: [{% for i in donut_data_remote %}"{{ i }}"{% if not forloop.last %}, {% endif %}{% endfor %}],
+          borderWidth: 1,
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
